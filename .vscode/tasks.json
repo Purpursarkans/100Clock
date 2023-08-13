@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}.lin"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -29,7 +29,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
                 "-static"
             ],
             "options": {
@@ -42,9 +42,10 @@
             "detail": "Задача создана отладчиком."
         },
         {
+
             "label": "Run windows",
             "type": "shell",
-            "command": "konsole -e wine main.exe",
+            "command": "konsole -e wine ${fileBasenameNoExtension}.exe",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "C/C++: mingw++ сборка активного файла"
@@ -56,7 +57,7 @@
         {
             "label": "Run linux",
             "type": "shell",
-            "command": "konsole -e ./main",
+            "command": "konsole -e ./${fileBasenameNoExtension}.lin",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "C/C++: g++ сборка активного файла"
