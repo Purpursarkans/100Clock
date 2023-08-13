@@ -8,7 +8,6 @@ void clock(int num)
 
 int main()
 {
-    
     clear();
     std::srand(std::time(nullptr));
 
